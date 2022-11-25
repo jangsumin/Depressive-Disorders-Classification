@@ -13,3 +13,4 @@ organize 'classification of depressive disorders utilizing machine learning' stu
 - - -
 ### 21.09
 * train_test_split 을 사용하여 학습데이터와 테스트데이터를 7:3 으로 나누고 학습을 진행하였으나, 유효한 결과를 얻지 못했습니다. ➡️ `classicMLP_trainTestSplit.py`
+* 10CV (Cross-Validation, 교차검증) 기법을 사용하여 데이터셋을 기본적으로 10개의 조각(fold)으로 나누었습니다. 그 중 9개는 학습에, 1개는 테스트에 사용하는 방식을 총 10번 진행하였습니다. Stratified CV는 계층적 교차검증이라 일컫는데, 이는 이항 분류의 결과 값이 불균형할 때, 이를 계산하여 조각에 배치하지만 위 연구에서 효용성이 크지 않았습니다. 결과적으로 유효한 결과를 얻지 못했습니다. - `classicMLP_stratified10CV.py`
