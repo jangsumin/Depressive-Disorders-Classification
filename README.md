@@ -33,3 +33,5 @@ organize 'classification of depressive disorders utilizing machine learning' stu
 -   사이킷런에서 제공하는 MLPClassifier 모듈을 사용하여 학습을 진행하였습니다. (8 ~ 9월에 걸쳐 구현했던 인공신경망 딥러닝 모델과는 다릅니다.) Nested CV는 중첩 교차검증이라 일컫는데, outer와 inner 부분으로 나누어서 교차검증을 진행하므로 반복 수가 제곱이 됩니다. 그만큼 시간이 많이 걸린다는 단점과 Overfitting(과대적합)의 우려가 있었습니다. ➡️ `mlpClassifier.py`
     <img src="./images/mlpClassifier.png">
 -   사이킷런에서 제공하는 SVC(SVM) 모듈을 사용하여 학습을 진행하였습니다. Nested CV의 검증방식을 채택하였으나 0.59의 낮은 평균 정확도를 얻었습니다. ➡️ `SVM_NestedCV.py`
+-   위 SVC(SVM) 모듈을 재사용하여 학습을 진행하였습니다. 기존의 Nested CV에 Stratified CV 검증방식을 혼합하였고, 0부터 9까지의 random_state(난수)에 따라 다르게 산출되는 정확도를 확인하였으나, 정확도의 편차가 너무 커서 신뢰성이 떨어지고, 학습 시간이 많으며, Overfitting의 우려가 있습니다. ➡️ `SVM_NestedStratifiedCV.py`
+    <img src="./images/SVM_NestedStratified.png">
